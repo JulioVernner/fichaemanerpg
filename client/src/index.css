@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(210, 20%, 98%);
+  --foreground: hsl(215, 25%, 27%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(215, 25%, 27%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(215, 25%, 27%);
+  --primary: hsl(221, 83%, 53%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(215, 16%, 47%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215, 16%, 47%);
+  --accent: hsl(210, 40%, 94%);
+  --accent-foreground: hsl(215, 25%, 27%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --ring: hsl(221, 83%, 53%);
+  --chart-1: hsl(221, 83%, 53%);
+  --chart-2: hsl(212, 95%, 68%);
+  --chart-3: hsl(216, 96%, 77%);
+  --chart-4: hsl(210, 98%, 82%);
+  --chart-5: hsl(212, 97%, 87%);
+  --sidebar: hsl(0, 0%, 100%);
+  --sidebar-foreground: hsl(215, 25%, 27%);
+  --sidebar-primary: hsl(221, 83%, 53%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(210, 40%, 94%);
+  --sidebar-accent-foreground: hsl(215, 25%, 27%);
+  --sidebar-border: hsl(214, 32%, 91%);
+  --sidebar-ring: hsl(221, 83%, 53%);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius: 0.5rem;
+  --shadow-2xs: 0px 1px 2px 0px hsl(221, 83%, 53% / 0.05);
+  --shadow-xs: 0px 1px 2px 0px hsl(221, 83%, 53% / 0.05);
+  --shadow-sm: 0px 1px 3px 0px hsl(221, 83%, 53% / 0.1), 0px 1px 2px -1px hsl(221, 83%, 53% / 0.1);
+  --shadow: 0px 1px 3px 0px hsl(221, 83%, 53% / 0.1), 0px 1px 2px -1px hsl(221, 83%, 53% / 0.1);
+  --shadow-md: 0px 4px 6px -1px hsl(221, 83%, 53% / 0.1), 0px 2px 4px -2px hsl(221, 83%, 53% / 0.1);
+  --shadow-lg: 0px 10px 15px -3px hsl(221, 83%, 53% / 0.1), 0px 4px 6px -4px hsl(221, 83%, 53% / 0.1);
+  --shadow-xl: 0px 20px 25px -5px hsl(221, 83%, 53% / 0.1), 0px 8px 10px -6px hsl(221, 83%, 53% / 0.1);
+  --shadow-2xl: 0px 25px 50px -12px hsl(221, 83%, 53% / 0.25);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: hsl(215, 28%, 17%);
+  --foreground: hsl(210, 20%, 98%);
+  --card: hsl(215, 28%, 17%);
+  --card-foreground: hsl(210, 20%, 98%);
+  --popover: hsl(215, 28%, 17%);
+  --popover-foreground: hsl(210, 20%, 98%);
+  --primary: hsl(221, 83%, 53%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(215, 25%, 27%);
+  --secondary-foreground: hsl(210, 20%, 98%);
+  --muted: hsl(215, 28%, 17%);
+  --muted-foreground: hsl(217, 10%, 64%);
+  --accent: hsl(215, 25%, 27%);
+  --accent-foreground: hsl(210, 20%, 98%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(215, 25%, 27%);
+  --input: hsl(215, 25%, 27%);
+  --ring: hsl(221, 83%, 53%);
+  --chart-1: hsl(221, 83%, 53%);
+  --chart-2: hsl(212, 95%, 68%);
+  --chart-3: hsl(216, 96%, 77%);
+  --chart-4: hsl(210, 98%, 82%);
+  --chart-5: hsl(212, 97%, 87%);
+  --sidebar: hsl(215, 28%, 17%);
+  --sidebar-foreground: hsl(210, 20%, 98%);
+  --sidebar-primary: hsl(221, 83%, 53%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(215, 25%, 27%);
+  --sidebar-accent-foreground: hsl(210, 20%, 98%);
+  --sidebar-border: hsl(215, 25%, 27%);
+  --sidebar-ring: hsl(221, 83%, 53%);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius: 0.5rem;
+  --shadow-2xs: 0px 1px 2px 0px hsl(221, 83%, 53% / 0.05);
+  --shadow-xs: 0px 1px 2px 0px hsl(221, 83%, 53% / 0.05);
+  --shadow-sm: 0px 1px 3px 0px hsl(221, 83%, 53% / 0.1), 0px 1px 2px -1px hsl(221, 83%, 53% / 0.1);
+  --shadow: 0px 1px 3px 0px hsl(221, 83%, 53% / 0.1), 0px 1px 2px -1px hsl(221, 83%, 53% / 0.1);
+  --shadow-md: 0px 4px 6px -1px hsl(221, 83%, 53% / 0.1), 0px 2px 4px -2px hsl(221, 83%, 53% / 0.1);
+  --shadow-lg: 0px 10px 15px -3px hsl(221, 83%, 53% / 0.1), 0px 4px 6px -4px hsl(221, 83%, 53% / 0.1);
+  --shadow-xl: 0px 20px 25px -5px hsl(221, 83%, 53% / 0.1), 0px 8px 10px -6px hsl(221, 83%, 53% / 0.1);
+  --shadow-2xl: 0px 25px 50px -12px hsl(221, 83%, 53% / 0.25);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-color: hsl(210, 20%, 98%);
+  }
+}
+
+/* Character sheet specific styles */
+.character-sheet-container {
+  background: linear-gradient(135deg, hsl(210, 20%, 98%) 0%, hsl(214, 32%, 95%) 100%);
+  min-height: 100vh;
+}
+
+/* Improve input focus states for character sheet */
+input[type="number"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+  @apply ring-2 ring-blue-500 border-blue-500;
+}
+
+/* Better spacing for skill rows */
+.skill-row {
+  @apply flex items-center gap-3 py-1;
+}
+
+/* Custom checkbox styling for death tests */
+input[type="checkbox"] {
+  @apply w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500;
+}
