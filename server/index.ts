@@ -2,15 +2,23 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import cors from "cors";
+import path from "path";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.resolve("dist/public")));
+
+app.get("*", (_req, res) => {
+  res.sendFile(path.resolve("dist/public/index.html"));
+});
 
 app.use(cors({
   origin: "https://fichaemanerpg-web.onrender.com",
   credentials: true
 }));
+
+
 
 app.use((req, res, next) => {
   const start = Date.now();
