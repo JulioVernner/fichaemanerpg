@@ -3,6 +3,7 @@ import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import cors from "cors";
 import path from "path";
+import http from "http";
 
 const app = express();
 
@@ -54,7 +55,8 @@ app.use((req, res, next) => {
 });
 
 (async () => {
-  const server = await registerRoutes(app);
+  // cria servidor HTTP manualmente
+  const server = http.createServer(app); // <-- aqui está a diferença
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
