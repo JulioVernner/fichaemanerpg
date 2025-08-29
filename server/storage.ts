@@ -44,9 +44,16 @@ export class DatabaseStorage implements IStorage {
     return result.rowCount !== null && result.rowCount > 0;
   }
 
-  async listCharacters(): Promise<Character[]> {
-    return await db.select().from(characters).orderBy(characters.updatedAt);
+  async listCharacters(): Promise<Pick<Character, 'id' | 'name'>[]> {
+  return await db
+    .select({ id: characters.id, name: characters.name })
+    .from(characters)
+    .orderBy(characters.updatedAt);
   }
-}
+
+  //async listCharacters(): Promise<Character[]> {
+   // return await db.select().from(characters).orderBy(characters.updatedAt);
+  //}
+//}
 
 export const storage = new DatabaseStorage();
