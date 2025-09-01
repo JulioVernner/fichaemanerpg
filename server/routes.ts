@@ -18,12 +18,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Get character by ID
   app.get("/api/characters/:id", async (req, res) => {
     try {
+    console.log("Dados recebidos:", req.body);
+    const validatedData = insertCharacterSchema.parse(req.body);
+    console.log("Dados validados:", validatedData);
+
+    const character = await storage.createCharacter(validatedData);
+    console.log("Personagem criado:", character);
+
+    res.status(201).json(character);
+    }
+    /*try {
       const character = await storage.getCharacter(req.params.id);
       if (!character) {
         return res.status(404).json({ message: "Character not found" });
       }
       res.json(character);
-    } catch (error) {
+    }*/ catch (error) {
       res.status(500).json({ message: "Failed to fetch character" });
     }
   });
